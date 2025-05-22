@@ -1,2 +1,16 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+document
+  .getElementById("weatherForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const cityInput = document.getElementById("cityInput").value;
+    const weatherResult = document.getElementById("weatherResult");
+
+    if (cityInput.toLowerCase() == "lahore") {
+      weatherResult.textContent = "Lahore weather is 23°C.";
+    } else if (cityInput !== "") {
+      weatherResult.textContent = `Weather report for "${cityInput}" is not available.`;
+    } else {
+      weatherResult.textContent = "Please enter a city name.";
+    }
+  });
